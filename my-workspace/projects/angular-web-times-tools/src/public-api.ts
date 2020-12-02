@@ -1,5 +1,5 @@
 /*
- * Public API Surface of my-lib
+ * Public API Surface of angular-web-times-tools
  */
 
 export * from './lib/menu-bar/types/menu-bar-datas';

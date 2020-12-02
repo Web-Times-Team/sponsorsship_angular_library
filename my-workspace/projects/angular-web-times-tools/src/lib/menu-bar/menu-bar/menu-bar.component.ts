@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MenuBarDatas } from '../types/menu-bar-datas';
 
 @Component({
-  selector: 'lib-menu-bar',
+  selector: 'wtt-menu-bar',
   templateUrl: './menu-bar.component.html',
   styleUrls: ['./menu-bar.component.css']
 })

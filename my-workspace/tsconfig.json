@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "my-lib": [
-        "dist/my-lib/my-lib",
-        "dist/my-lib"
+      "angular-web-times-tools": [
+        "dist/angular-web-times-tools/angular-web-times-tools",
+        "dist/angular-web-times-tools"
       ]
     }
   },
