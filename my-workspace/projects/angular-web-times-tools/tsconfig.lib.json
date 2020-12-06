@@ -9,7 +9,21 @@
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+    "paths": {
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ],
+      "bootstrap": [
+        "./node_modules/bootstrap"
+      ],
+      "jquery": [
+        "./node_modules/jquery"
+      ],
+      "popper.js": [
+        "./node_modules/popper.js"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,

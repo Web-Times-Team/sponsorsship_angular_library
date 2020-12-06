@@ -1,9 +1,10 @@
+import { Logo } from './logo';
+import { NavLink } from './nav-link';
+
 export class MenuBarDatas {
 
-    constructor(public haveMenuLogo: boolean,
-                public liNames: string[],
-                public lastLiNaButton: boolean,
-                public imgSrc?: string) {
+    constructor(public navLinks: NavLink[],
+                public logo?: Logo) {
 
     }
 
