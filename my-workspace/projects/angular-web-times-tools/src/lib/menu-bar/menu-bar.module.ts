@@ -1,10 +1,10 @@
-import { InjectionToken, ModuleWithProviders, NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
-import { MenuBarDatas } from './types/menu-bar-datas';
+import { MenuBarDatas, MENU_BAR_DATAS } from './types/menu-bar-datas';
 
 
-export const MENU_BAR_DATAS = new InjectionToken<MenuBarDatas>("menuBarDatas");
+
 @NgModule({
   declarations: [MenuBarComponent],
   imports: [

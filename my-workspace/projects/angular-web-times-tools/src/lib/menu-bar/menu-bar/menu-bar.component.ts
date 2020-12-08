@@ -1,6 +1,7 @@
+import { Inject, Optional } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuBarDatas } from '../types/menu-bar-datas';
+import { MenuBarDatas, MENU_BAR_DATAS } from '../types/menu-bar-datas';
 
 @Component({
   selector: 'wtt-menu-bar',
@@ -10,9 +11,11 @@ import { MenuBarDatas } from '../types/menu-bar-datas';
 export class MenuBarComponent implements OnInit {
 
   @Input() menuBarDatas: MenuBarDatas
-  constructor(private router: Router
+  constructor(private router: Router, @Optional() @Inject(MENU_BAR_DATAS) config?: MenuBarDatas
   ) {
-
+    if (MENU_BAR_DATAS) {
+      this.menuBarDatas = config;
+    }
   }
 
   ngOnInit(): void {
