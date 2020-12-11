@@ -4,19 +4,19 @@
         <div class="logo_container">
             <!-- container -->
             <span class="logo_helper"></span>
-            <img (click)="makelogoRedirect()" [src]="menuBarDatas.logo.logoUrl" alt="One-To-Many" id="logo"
-                data-height-percentage="56" />
+            <img [routerLink]="menuBarDatas.logo.redirectUrl" [src]="menuBarDatas.logo.logoUrl" alt="One-To-Many"
+                id="logo" data-height-percentage="56" />
         </div>
         <div id="et-top-navigation" data-height="76" data-fixed-height="60">
             <nav id="top-menu-nav">
                 <ul id="top-menu" class="nav">
                     <ng-container *ngFor="let navLink of menuBarDatas.navLinks">
-                        <li (click)="makeNavLinkRedirect(navLink.link)"
+                        <li [routerLink]="navLink.link" routerLinkActive="active"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496">
-                            {{navLink.name}}
-                            <ul *ngIf="!navLink.hasChild()" class="sub-menu">
+                            {{ navLink.name }}
+                            <ul *ngIf="navLink.hasChild()" class="sub-menu">
                                 <ng-container *ngFor="let childLink of navLink.childLinks">
-                                    <li (click)="makeChildLinkRedirect(childLink.link)"
+                                    <li [routerLink]="childLink.link" routerLinkActive="active"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323">
                                         {{childLink.name}}</li>
                                 </ng-container>

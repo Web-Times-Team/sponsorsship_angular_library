@@ -8,11 +8,17 @@ export class NavLink {
     set name(name: string) {
         this._name = name;
     }
+    get link() {
+        return this._link;
+    }
+    set link(link: string) {
+        this._link = link;
+    }
     get childLinks() {
         return this._childLinks;
     }
     appendChildLinks(childLinks: NavLink[]): NavLink {
-        this._childLinks.concat(childLinks);
+        this._childLinks = this._childLinks.concat(childLinks);
         return this;
     }
     appendChildLink(name: string, link: string): void {

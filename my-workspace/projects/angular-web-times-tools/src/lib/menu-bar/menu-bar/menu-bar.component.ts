@@ -19,15 +19,6 @@ export class MenuBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
 
-  }
-  makelogoRedirect(): void {
-    this.router.navigate([this.menuBarDatas.logo.redirectUrl]);
-  }
-  makeNavLinkRedirect(link: string): void {
-    this.router.navigate([link]);
-  }
-  makeChildLinkRedirect(childLink: string): void {
-    this.router.navigate([childLink]);
-  }
 }
