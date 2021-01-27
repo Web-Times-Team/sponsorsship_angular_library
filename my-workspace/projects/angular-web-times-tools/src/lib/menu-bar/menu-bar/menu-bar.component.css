@@ -26,7 +26,7 @@
      display: block;
  }
  
- li.active {
+ li:hover {
      color: #039be5;
      cursor: pointer;
  }
