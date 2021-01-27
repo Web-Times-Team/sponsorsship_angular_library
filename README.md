@@ -2,6 +2,7 @@
 
 This project library was generated with Angular CLI version 9.1.5.
 Development server
+
 This library contains Angular components that can be fully configured by the developer using it. Thus the developer can use it in several of his projects. 
 
 Run  
@@ -23,4 +24,5 @@ study how make html responsive studies menu bar sample complete configurable ele
 
 # Install library
 To install library run `npm i @web-times-team/angular-web-times-tools` 
+
 visit my npm depot https://www.npmjs.com/~faizou
