@@ -1,3 +1,45 @@
-<div>
-    data work ok
-</div>
+<header id="main-header" data-height-onload="76">
+    <div class="container clearfix et_menu_container">
+        <!-- container niveau 1er-->
+        <div class="logo_container">
+            <!-- container -->
+            <img [routerLink]="menuBarDatas.logo.redirectUrl" [src]="menuBarDatas.logo.logoUrl" alt="One-To-Many" id="logo" data-height-percentage="56" />
+        </div>
+        <!-- SEARCH BAR-->
+        <div class="et_search_outer">
+            <div class="container-fluid et_search_form_container">
+                <form role="search" method="get" class="et-search-form" action="https://onetomany.org/">
+                    <input type="search" class="et-search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" /> </form>
+                <span class="et_close_search_field"></span>
+            </div>
+        </div>
+
+        <div id="et-top-navigation" data-height="76" data-fixed-height="60">
+            <nav id="top-menu-nav">
+                <ul id="top-menu" class="nav">
+                    <ng-container *ngFor="let navLink of menuBarDatas.navLinks">
+                        <li (mouseenter)="displaySubMenu(navLink)" (mouseleave)="hideSubMenu(navLink)" [routerLink]="navLink.link" routerLinkActive="active" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-496">
+                            {{ navLink.name }}
+                            <ul *ngIf="navLink.hasChild()" class="sub-menu" [ngClass]="{'displayed-sub-menu': isDisplayedSubMenu}">
+                                <ng-container *ngFor="let childLink of navLink.childLinks">
+                                    <li [routerLink]="childLink.link" routerLinkActive="active" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323">
+                                        {{childLink.name}}</li>
+                                </ng-container>
+                            </ul>
+                        </li>
+                    </ng-container>
+                </ul>
+            </nav>
+            <!-- <div id="et_mobile_nav_menu">
+                <div class="mobile_nav closed">
+                    <span class="select_page">Select Page</span>
+                    <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+                </div>
+            </div> -->
+        </div>
+        <!-- #et-top-navigation -->
+    </div>
+    <!-- .container -->
+
+</header>
+<!-- #main-header -->

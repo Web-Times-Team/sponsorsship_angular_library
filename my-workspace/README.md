@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## functionnality in adding
+study how make html responsive
+studies menu bar sample 
+complete configurable element list
+implements search in web site
+Create schematics for components personnalisation
+    ng add
+
+
