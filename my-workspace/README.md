@@ -32,6 +32,5 @@ studies menu bar sample
 complete configurable element list
 implements search in web site
 Create schematics for components personnalisation
-    ng add
 
 
