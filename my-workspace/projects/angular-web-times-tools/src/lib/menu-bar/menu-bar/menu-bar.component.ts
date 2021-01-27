@@ -22,6 +22,7 @@ export class MenuBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   displaySubMenu(navLink: NavLink){
