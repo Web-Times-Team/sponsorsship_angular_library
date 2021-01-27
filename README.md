@@ -23,3 +23,4 @@ study how make html responsive studies menu bar sample complete configurable ele
 
 # Install library
 To install library run `npm i @web-times-team/angular-web-times-tools` 
+visit my npm depot https://www.npmjs.com/~faizou
