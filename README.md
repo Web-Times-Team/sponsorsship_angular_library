@@ -9,7 +9,7 @@ This project library contains Angular components that can be fully configured by
 
 To install this project on your computer, clone the repository and install dependencies.
 
-`$ cd my-workspace`
+`$ cd my-workspace`<br>
 `$ npm install`
  
  Build
