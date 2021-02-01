@@ -30,6 +30,7 @@ functionnality in adding
 study how make html responsive studies menu bar sample complete configurable element list implements search in web site Create schematics for components personnalisation
 
 ## Install library
-To install library run `npm i @web-times-team/angular-web-times-tools`.
+To install library in your own projets <br>
+`npm i @web-times-team/angular-web-times-tools`.
 
 [visit my npm account](https://www.npmjs.com/~faizou)
