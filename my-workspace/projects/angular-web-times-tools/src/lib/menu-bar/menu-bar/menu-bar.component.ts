@@ -12,27 +12,24 @@ import { NavLink } from '../types/nav-link';
 export class MenuBarComponent implements OnInit {
 
   @Input() menuBarDatas: MenuBarDatas
-  isDisplayedSubMenu: boolean;
+  isDisplayedSubMenu = false;
+  isDisplayedStandMenu = false;
   constructor(private router: Router, @Optional() @Inject(MENU_BAR_DATAS) config?: MenuBarDatas
   ) {
     if (MENU_BAR_DATAS) {
       this.menuBarDatas = config;
     }
-    this.isDisplayedSubMenu = false;
   }
 
   ngOnInit(): void {
-    
+
   }
 
-  displaySubMenu(navLink: NavLink){
+  displaySubMenu(navLink: NavLink) {
     if (navLink.hasChild())
-    this.isDisplayedSubMenu = true;
+      this.isDisplayedSubMenu = !this.isDisplayedSubMenu;
   }
-
-  hideSubMenu(navLink: NavLink){
-    if (navLink.hasChild())
-    this.isDisplayedSubMenu = false;
-  }  
-
+  displayStandMenu() {
+    this.isDisplayedStandMenu = !this.isDisplayedStandMenu;
+  }
 }
