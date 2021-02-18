@@ -1,0 +1,35 @@
+<!-- this component use bootstrap by default -->
+<!-- add in future version translation module -->
+<section class="container mx-auto py-5">
+    <h3 class="mb-1 font-weight-bold text-center"> Login </h3>
+
+
+    <div class="my-4 mx-2">
+        <h5 class="my-1 font-weight-bold text-left"> with </h5>
+        <!-- ajouter l'icone de facebook  -->
+
+
+        <button *ngFor="let info of mediasButInfDatas" type="button" class="btn btn-lg btn-block my-1" ngClass="{{info.color}}">
+        <svg class="bi icon" width="32" height="32" fill="currentColor">
+            <use attr.xlink:href="{{info.icon}}"/>
+        </svg> <span class="ml-1">{{info.name}}</span>
+    </button>
+    </div>
+
+    <div class="my-4">
+        <h5 class="my-1 font-weight-bold text-left"> or </h5>
+
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" [placeholder]="usernameField" aria-label="usernameField">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="password" aria-label="password">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-info text-center btn-lg my-1">Login</button>
+            </div>
+        </form>
+
+    </div>
+</section>
