@@ -6,12 +6,14 @@ export class NavLink {
         return this._name
     }
     set name(name: string) {
+        name.trim();
         this._name = name;
     }
     get link() {
         return this._link;
     }
     set link(link: string) {
+        link.trim();
         this._link = link;
     }
     get childLinks() {

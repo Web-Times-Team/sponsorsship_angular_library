@@ -1,4 +1,4 @@
-export enum MediasButInfType {
+export enum MediaButInfType {
     facebook,
     google,
     linkedIn
