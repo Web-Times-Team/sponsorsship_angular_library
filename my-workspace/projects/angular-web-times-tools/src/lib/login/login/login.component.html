@@ -1,15 +1,14 @@
 <!-- this component use bootstrap by default -->
 <!-- add in future version translation module -->
 <section class="container mx-auto pt-5 mt-5">
-    <h3 class="mb-1 font-weight-bold text-center"> Login </h3>
+    <h3 class="mb-1 font-weight-bold text-center"> Log in </h3>
 
 
     <div class="my-4 ">
         <h5 class="my-1 font-weight-bold text-left"> with </h5>
-        <!-- ajouter l'icone de facebook  -->
-
-
-        <button *ngFor="let info of mediaButInfDatas" type="button" class="btn btn-lg btn-block my-1" ngClass="{{info.color}}">
+        <!-- add the button icon  -->
+        <!-- ngClass="{{info.color}}" -->
+        <button *ngFor="let info of mediaButInfDatas; first as isFirst" type="button" class="btn btn-block mt-1 mb-1 mb-md-3" [ngClass]="buttonClass(isFirst, info)">
         <svg class="bi icon" width="32" height="32" fill="currentColor">
             <use attr.xlink:href="{{info.icon}}"/>
         </svg> <span class="ml-1">{{info.name}}</span>
@@ -28,10 +27,10 @@
                     </svg> <span> {{ usernameField}}: </span>
                 </h5>
                 <input class="form-control" type="text" [placeholder]="usernameField" [ngStyle]="{'background-color':  loginForm.dirty && loginForm.invalid? 'rgba(255,0,0,0.1)'  : 'rgba(255,255,255)' }" aria-label="usernameField" formControlName="username">
-                <!-- changer la couleur de l'input en fonction loginForm.get('username').errors?.required
-                       - verifier le mecanisme de changement de couleur de input type text dans bootstrap:
+                <!-- change the colour of the input according to the loginForm.get('username').errors?.required
+                       - check the colour change mechanism of the text input type in bootstrap:
 
-                       - creer un html element p au dessus des inputs avec icone paneau avec à l'interieur un message d'erreur dont l'apparition est lié à Form error required -->
+                       - create an html element p on top of the inputs with a panel icon with an error message inside, the appearance of which is related to Form error required -->
             </div>
             <div class="form-group">
 
@@ -43,7 +42,7 @@
                 <input class="form-control" type="text" placeholder="password" [ngStyle]="{'background-color': loginForm.dirty && loginForm.invalid? 'rgba(255,0,0,0.1)'  : 'rgba(255,255,255)' }" aria-label="password" formControlName="password">
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-info text-center btn-lg my-1">Login</button>
+                <button type="submit" class="btn btn-info text-center btn-lg my-1">Log in</button>
             </div>
         </form>
 

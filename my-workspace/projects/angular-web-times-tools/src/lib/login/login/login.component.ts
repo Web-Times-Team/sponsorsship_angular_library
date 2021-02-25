@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   mediaButInfDatas: any[] = [];
   @Input() usernameField: string; // must receiving UsernameField[0] or UsernameField[1] type enum
   @Output() loginValue = new EventEmitter<any>();
+  mobile = true;
+
   /**
    * reative form
    */
@@ -33,25 +35,46 @@ export class LoginComponent implements OnInit {
         case MediaButInfType.facebook:
           mediasButInf.icon = 'bootstrap-icons.svg#facebook';
           mediasButInf.name = MediaButInfType[0];
-          mediasButInf.color = 'btn-primary';
+
           break;
         case MediaButInfType.google:
           mediasButInf.icon = 'bootstrap-icons.svg#google';
           mediasButInf.name = MediaButInfType[1];
-          mediasButInf.color = 'btn-danger';
+
           break;
         default:
           mediasButInf.icon = 'bootstrap-icons.svg#linkedin';
           mediasButInf.name = MediaButInfType[2];
-          mediasButInf.color = 'btn-info';
+
       }
       this.mediaButInfDatas.push(mediasButInf);
     })
-    console.log(this.mediaButInfDatas);
+
+    const mediaQueryList = window.matchMedia('(min-width: 768px)');
+    mediaQueryList.addEventListener('change', this.screenTest);
+  }
+
+
+  screenTest(event: any) {
+    if (event.matches) {
+      this.mobile = false;
+      console.log('it is not mobile', this.mobile);
+    } else {
+      this.mobile = true;
+      console.log('it is mobile', this.mobile);
+    }
+  }
+
+  buttonClass(isFirst: boolean, info: any): any {
+    return {
+      'btn-primary': info.name === MediaButInfType[0],
+      'btn-danger': info.name === MediaButInfType[1],
+      'btn-info': info.name === MediaButInfType[2],
+    }
   }
 
   /**
-   * envoie les informations de login son parent via un evenement output
+   * sends his parent's login information via an output event
    */
   onSubmit() {
     if (this.loginForm.valid) {

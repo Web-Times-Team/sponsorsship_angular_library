@@ -22,3 +22,16 @@ Run `ng test angular-web-times-tools` to execute the unit tests via [Karma](http
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Module login
+To use it import the `LoginModule` module <br>
+in the view  <wtt-login> <wtt-login>  <br>
+in the component provide the values of  <br>
+ `mediaButInfTypes`:the ways of login available  (facebook, google, linkedin) <br>
+  `usernameField`: specifies whether to log in with a username or an email <br>
+   event `loginValue` event allows you to receive login credentials ;
+## Module menu-bar
+To use it import the  `MenuBarModule` module <br>
+in the view  <wtt-menu-bar> <wtt-menu-bar>  <br>
+in the component provide the values of  <br>
+ `menuBarDatas: MenuBarDatas`: menu bar infos 
