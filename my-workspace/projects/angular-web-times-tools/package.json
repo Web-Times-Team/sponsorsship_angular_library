@@ -1,6 +1,6 @@
 {
     "name": "@web-times-team/angular-web-times-tools",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "peerDependencies": {
         "@angular/common": "^9.1.12",
         "@angular/core": "^9.1.12",
