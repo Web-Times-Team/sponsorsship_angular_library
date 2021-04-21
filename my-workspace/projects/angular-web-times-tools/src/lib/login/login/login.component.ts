@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MediaButInfType } from '../types/media-but-info-type';
 
 @Component({
@@ -13,22 +13,22 @@ export class LoginComponent implements OnInit {
   @Input() usernameField: string; // must receiving UsernameField[0] or UsernameField[1] type enum
   @Output() loginValue = new EventEmitter<any>();
   mobile = true;
-
-  /**
-   * reative form
-   */
-  loginForm = this.fb.group(
-    {
-      username: ['', Validators.required], // control sur input username 
-      password: ['', Validators.required] // control sur input password
-    }
-  )
+  loginForm: FormGroup;
 
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
 
+    /**
+     * reative form
+     */
+    this.loginForm = this.fb.group(
+      {
+        [this.usernameField]: ['', Validators.required], // control sur input username 
+        password: ['', Validators.required] // control sur input password
+      }
+    )
     this.mediaButInfTypes.forEach((type) => {
       const mediasButInf: any = {};
       switch (type) {
@@ -54,7 +54,10 @@ export class LoginComponent implements OnInit {
     mediaQueryList.addEventListener('change', this.screenTest);
   }
 
-
+  /**
+   * Test device type
+   * @param event 
+   */
   screenTest(event: any) {
     if (event.matches) {
       this.mobile = false;

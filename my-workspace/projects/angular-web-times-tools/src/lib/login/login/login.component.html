@@ -31,7 +31,7 @@
                         <use xlink:href="bootstrap-icons.svg#exclamation-triangle-fill"/>
                     </svg> <span> {{ usernameField}}: </span>
                 </h5>
-                <input class="form-control" type="text" [placeholder]="usernameField" [ngStyle]="{'background-color':  loginForm.dirty && loginForm.invalid? 'rgba(255,0,0,0.1)'  : 'rgba(255,255,255)' }" aria-label="usernameField" formControlName="username">
+                <input class="form-control" type="text" [placeholder]="usernameField" [ngStyle]="{'background-color':  loginForm.dirty && loginForm.invalid? 'rgba(255,0,0,0.1)'  : 'rgba(255,255,255)' }" aria-label="usernameField" formControlName="{{usernameField}}">
                 <!-- change the colour of the input according to the loginForm.get('username').errors?.required
                        - check the colour change mechanism of the text input type in bootstrap:
 
