@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MediaButInfType } from '../types/media-but-info-type';
 
 @Component({
@@ -10,13 +11,15 @@ import { MediaButInfType } from '../types/media-but-info-type';
 export class LoginComponent implements OnInit {
   @Input() mediaButInfTypes: MediaButInfType[];
   mediaButInfDatas: any[] = [];
+  @Input() signupRoute: string;
+  @Input() forgotPasswordRoute: string;
   @Input() usernameField: string; // must receiving UsernameField[0] or UsernameField[1] type enum
   @Output() loginValue = new EventEmitter<any>();
   mobile = true;
   loginForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -75,7 +78,18 @@ export class LoginComponent implements OnInit {
       'btn-info': info.name === MediaButInfType[2],
     }
   }
-
+  /**
+   * 
+   */
+  signup(): void {
+    this.router.navigate([this.signupRoute]);
+  }
+ /**
+   * 
+   */
+  forgotPassword(): void {
+    this.router.navigate([this.forgotPasswordRoute]);
+  }
   /**
    * sends his parent's login information via an output event
    */
