@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MediaButInfType } from '../types/media-but-info-type';
 
 @Component({
@@ -10,25 +11,27 @@ import { MediaButInfType } from '../types/media-but-info-type';
 export class LoginComponent implements OnInit {
   @Input() mediaButInfTypes: MediaButInfType[];
   mediaButInfDatas: any[] = [];
+  @Input() signupRoute: string;
+  @Input() forgotPasswordRoute: string;
   @Input() usernameField: string; // must receiving UsernameField[0] or UsernameField[1] type enum
   @Output() loginValue = new EventEmitter<any>();
   mobile = true;
-
-  /**
-   * reative form
-   */
-  loginForm = this.fb.group(
-    {
-      username: ['', Validators.required], // control sur input username 
-      password: ['', Validators.required] // control sur input password
-    }
-  )
+  loginForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
+    /**
+     * reative form
+     */
+    this.loginForm = this.fb.group(
+      {
+        [this.usernameField]: ['', Validators.required], // control sur input username 
+        password: ['', Validators.required] // control sur input password
+      }
+    )
     this.mediaButInfTypes.forEach((type) => {
       const mediasButInf: any = {};
       switch (type) {
@@ -54,7 +57,10 @@ export class LoginComponent implements OnInit {
     mediaQueryList.addEventListener('change', this.screenTest);
   }
 
-
+  /**
+   * Test device type
+   * @param event 
+   */
   screenTest(event: any) {
     if (event.matches) {
       this.mobile = false;
@@ -72,7 +78,18 @@ export class LoginComponent implements OnInit {
       'btn-info': info.name === MediaButInfType[2],
     }
   }
-
+  /**
+   * 
+   */
+  signup(): void {
+    this.router.navigate([this.signupRoute]);
+  }
+ /**
+   * 
+   */
+  forgotPassword(): void {
+    this.router.navigate([this.forgotPasswordRoute]);
+  }
   /**
    * sends his parent's login information via an output event
    */
