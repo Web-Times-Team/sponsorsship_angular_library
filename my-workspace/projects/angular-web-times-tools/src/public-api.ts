@@ -11,3 +11,8 @@ export * from './lib/login/types/usernameField';
 export * from './lib/login/types/media-but-info-type';
 export * from './lib/login/login/login.component';
 export * from './lib/login/login.module';
+
+
+export * from './lib/http-services/http-error-handler.service';
+export * from './lib/http-services/message.service';
+export * from './lib/http-services/http-services.module';
